@@ -84,9 +84,19 @@ function generateWaveGraph(n, width, height) {
     const vertices = createVertices(n, width, height);
     const edges = [];
 
+    // 1. Создаём базовый ориентированный цикл (гарантирует сильную связность)
     for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            if (i !== j && Math.random() < 0.25) {
+        edges.push({ from: i, to: (i + 1) % n });
+    }
+
+    // 2. Добавляем случайные дополнительные рёбра (увеличиваем диаметр)
+    const extraEdgesCount = Math.floor(Math.random() * (n * 2)) + n;
+    for (let e = 0; e < extraEdgesCount; e++) {
+        const i = Math.floor(Math.random() * n);
+        const j = Math.floor(Math.random() * n);
+        if (i !== j) {
+            const exists = edges.some(edge => edge.from === i && edge.to === j);
+            if (!exists) {
                 edges.push({ from: i, to: j });
             }
         }
@@ -95,7 +105,6 @@ function generateWaveGraph(n, width, height) {
     const graph = new Graph(vertices, edges, true, false);
     return { graph };
 }
-
 function generateBellmanFordGraph(n, width, height) {
     const vertices = createVertices(n, width, height);
     const edges = [];
