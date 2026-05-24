@@ -32,28 +32,26 @@
 - CSS3 — стилизация, тёмная тема, адаптив
 - JavaScript (ES6) — вся логика, алгоритмы, отрисовка на canvas
 - Canvas API — визуализация графов
-
+  
 ## Структура проекта
 
-project/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   ├── graph.js              класс Graph
-│   ├── drawing.js            отрисовка графов
-│   ├── generators.js         генерация тестовых графов
-│   ├── UI.js                 построение интерфейса
-│   ├── check.js              проверка ответов
-│   ├── solution.js           показ решений и подсказок
-│   ├── main.js               инициализация, переключение заданий
-│   └── algorithms/
-│       ├── scc.js            компоненты сильной связности
-│       ├── wave.js           фронт волны
-│       ├── fordBellman.js    Форд-Беллман
-│       ├── euler.js          эйлерова цепь
-│       └── mst.js            минимальное остовное дерево
-└── README.md
+| Файл | Описание |
+|------|----------|
+| index.html | Главная страница |
+| css/style.css | Стили |
+| js/graph.js | Класс Graph |
+| js/drawing.js | Отрисовка графов |
+| js/generators.js | Генерация тестовых графов |
+| js/UI.js | Построение интерфейса |
+| js/check.js | Проверка ответов |
+| js/solution.js | Показ решений и подсказок |
+| js/main.js | Инициализация, переключение заданий |
+| js/algorithms/scc.js | Компоненты сильной связности |
+| js/algorithms/wave.js | Фронт волны |
+| js/algorithms/fordBellman.js | Форд-Беллман |
+| js/algorithms/euler.js | Эйлерова цепь |
+| js/algorithms/mst.js | Минимальное остовное дерево |
+| README.md | Документация |
 
 ## Как пользоваться
 
