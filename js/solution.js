@@ -139,8 +139,6 @@ function showSolution() {
     scrollContent += '<p>По матрице S группируем вершины: если S[i][j] = 1, то вершины i и j в одной компоненте.</p>';
     scrollContent += '<p><strong>Компоненты сильной связности:</strong> ' + result.components.map(c => '{' + c.join(',') + '}').join(', ') + '</p>';
     scrollContent += '</div>';
-    scrollContent += '<p style="margin-top: 25px; font-size: 0.75rem; text-align: center; border-top: 1px solid ' + colors.borderColor + '; padding-top: 12px;"> Зелёная ячейка = 1 (связь есть), красная = 0 (связи нет), синяя = промежуточное значение.</p>';
-    scrollContent += '</div>';
 
     modalBody.innerHTML = scrollContent;
     modalTitle.innerHTML = ' Пошаговое решение (матричный метод) — задание 1';
@@ -229,8 +227,7 @@ function showWaveSolution() {
     html += '<p style="margin-left: 20px; font-size: 0.85rem; color: ' + colors.textColor + ';"> Минимальный эксцентриситет среди всех вершин.</p>';
     html += '<p><strong style="background: ' + colors.blueBg + '; color: ' + colors.blueText + '; padding: 2px 8px; border-radius: 12px;"> Центры графа:</strong> <span style="color: ' + colors.textColor + ';">' + (result.centers.join(', ') || 'нет') + '</span></p>';
     html += '<p style="margin-left: 20px; font-size: 0.85rem; color: ' + colors.textColor + ';"> Вершины, у которых эксцентриситет равен радиусу.</p>';
-    html += '<p style="margin-top: 15px; font-size: 0.8rem; border-top: 1px solid ' + colors.borderColor + '; padding-top: 10px; color: ' + colors.textColor + ';"> <strong>Как вычислялось:</strong> Флойд‑Уоршелл → матрица расстояний → эксцентриситеты → диаметр (max), радиус (min), центры.</p>';
-    html += '</div></div>';
+    html += '</div>';
 
     modalTitle.innerHTML = ' Фронт волны — пошаговое решение (задание 2)';
     modalBody.innerHTML = html;
@@ -333,8 +330,6 @@ function showBellmanSolution() {
             html += '</tr>';
         }
         html += '</tbody></table></div>';
-        html += '<p style="margin-top: 12px; font-size: 0.8rem;"><small>λ<sup>k</sup>ᵢ — минимальное расстояние от вершины ' + startLabel + ' до вершины i после k итераций алгоритма. Жёлтым выделена целевая вершина (' + endLabel + ').</small></p>';
-        html += '</div>';
         return html;
     }
 
@@ -501,8 +496,6 @@ function showMSTSolution() {
     html += '<div style="margin: 20px 0; padding: 15px; background: ' + colors.headerBg + '; border-radius: 16px; border: 1px solid ' + colors.borderColor + ';">';
     html += '<h4 style="margin-top: 0; margin-bottom: 15px; color: ' + colors.textColor + ';"> Граф минимального остовного дерева</h4>';
     html += '<div id="mstCanvasContainer" style="text-align: center;"></div>';
-    html += '<p style="margin-top: 12px; font-size: 0.8rem;"><small>Толстые зелёные линии — рёбра, входящие в минимальное остовное дерево. Веса подписаны.</small></p>';
-    html += '</div>';
 
     html += '<div style="margin: 20px 0; padding: 15px; background: ' + colors.headerBg + '; border-radius: 16px; border: 1px solid ' + colors.borderColor + ';">';
     html += '<h4 style="margin-top: 0; color: ' + colors.textColor + ';"> Результат</h4>';
